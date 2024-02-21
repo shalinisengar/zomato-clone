@@ -11,4 +11,4 @@ let ratingSchema = mongoose.Schema({
 
 })
 let Rating = mongoose.model('Rating',ratingSchema)
-module.default = Rating
+module.exports = Rating

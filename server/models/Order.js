@@ -20,4 +20,4 @@ let orderSchema = mongoose.Schema({
 
 })
 let Order = mongoose.model('Order',orderSchema)
-module.default = Order
+module.exports = Order

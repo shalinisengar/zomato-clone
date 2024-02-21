@@ -20,4 +20,4 @@ let menuSchema = new mongoose.Schema({
 
 })
   let Menu =  mongoose.model('Menu',menuSchema)
-  module.default = Menu
+  module.exports = Menu

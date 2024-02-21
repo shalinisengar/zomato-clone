@@ -11,4 +11,4 @@ let reviewSchema = mongoose.Schema({
 
 })
 let Review = mongoose.model('Review',reviewSchema)
-module.default = Review
+module.exports = Review

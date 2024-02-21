@@ -18,5 +18,5 @@ let productSchema = mongoose.Schema({
     require:true
  }
 })
-let product = mongoose.model('product',productSchema)
-module.default = product
+let Product = mongoose.model('Product',productSchema)
+module.exports= Product

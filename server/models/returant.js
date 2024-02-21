@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-let retuarantSchema = new mongoose.Schema({
+let retruarantSchema = new mongoose.Schema({
 
   name:{
     type:String,
@@ -13,7 +13,7 @@ let retuarantSchema = new mongoose.Schema({
   ,
   description:{
     type:String,
-    require:true
+    
   },
   contact_No:{
     type:Number,
@@ -21,13 +21,14 @@ let retuarantSchema = new mongoose.Schema({
   },
   opning_time:{
     type:Date,
-    require:true
+    
   },
   image:{
     type:String,
-    require:true
+    
   }
 
 })
-  let restuarant =  mongoose.model('Restuarant',retuarantSchema)
-  module.default = restuarant
+  let Restruarant =  mongoose.model('Restruarant',retruarantSchema)
+
+  module.exports= Restruarant
