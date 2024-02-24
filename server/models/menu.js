@@ -13,9 +13,14 @@ let menuSchema = new mongoose.Schema({
   },
  
  
-  price:{
-    type:Number,
-    require:true
+  category:{
+
+    type:String,
+    enum:[
+      'veg','non-veg'
+    ],
+    default:'veg'
+   
   }
 
 })

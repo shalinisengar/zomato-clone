@@ -2,7 +2,7 @@ const  mongoose  = require("mongoose");
 
 let reviewSchema = mongoose.Schema({
  user_Id:[{
-    type:Schema.Type.ObjectId,
+    type:mongoose.Schema.Type.ObjectId,
     ref:'User'
  }],
  comment:{
