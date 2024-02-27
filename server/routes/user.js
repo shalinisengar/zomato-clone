@@ -23,7 +23,7 @@ router.post('/users',async(req,res)=>{
                 passWord:user.passWord          
             })
              await dbUser.save()
-            res.send({messge:"done"})
+            res.send({ dbUser,messge:"done"})
 
     }
 

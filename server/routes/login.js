@@ -11,8 +11,7 @@ let bcrypt=  require('bcrypt')
 
  router.post('/login', async (req, res) => {
     let ldata = req.body
-    // console.log(ldata);
-    //  res.send(ldata)
+    
     let user1
     try {
         user1 = await User.findOne({ email: ldata.email })
@@ -35,7 +34,7 @@ let bcrypt=  require('bcrypt')
                 let data = JSON.stringify(user1.email)
                  let tokan=   jwt.sign(data,'NVDSKJLNIULSVKVKSNVUIVNKD')
 
-            res.send({tokan,msg:'login ho gaya login scuccesfull'})
+            res.send({tokan,user1})
         }
     }
 })
