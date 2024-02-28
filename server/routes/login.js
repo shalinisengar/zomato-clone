@@ -12,18 +12,19 @@ let bcrypt=  require('bcrypt')
  router.post('/login', async (req, res) => {
     let ldata = req.body
     
-    let user1
+    let userData
     try {
-        user1 = await User.findOne({ email: ldata.email })
+        userData= await User.findOne({ email: ldata.email })
+        console.log(userData,"eeee");
     }
     catch {
         console.log(err);
     }
-    if (!user1) {
+    if (!userData) {
         res.send('user not found')
     }
     else {
-        let validpassword = await bcrypt.compare(ldata.passWord, user1.passWord).catch((err) => {
+        let validpassword = await bcrypt.compare(ldata.passWord, userData.passWord).catch((err) => {
             console.log(err, 'error');
         })
         console.log(validpassword);
@@ -31,10 +32,10 @@ let bcrypt=  require('bcrypt')
             res.send('invalid passWord')
         }
         else {
-                let data = JSON.stringify(user1.email)
+                let data = JSON.stringify(userData.email)
                  let tokan=   jwt.sign(data,'NVDSKJLNIULSVKVKSNVUIVNKD')
 
-            res.send({tokan,user1})
+            res.send({tokan,userData,msg:"login succesfully"})
         }
     }
 })
